@@ -1,0 +1,336 @@
+@import "bootstrap-4.0.0/scss/bootstrap";
+
+* {
+    box-sizing: border-box;
+}
+
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important; 
+	width: 1px !important; 
+	overflow: hidden;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+}
+
+.wrapper {
+    display: none;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container-fluid {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 20%;
+    margin-right: 10px;
+}
+
+.maincontent {
+    width: 80%;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.header__wrapper-titles {
+    margin-right: auto;
+    width: 60%;
+    padding: 2px 5px;
+}
+
+.header__text-title-note {
+    width: 100%;
+    padding: 2px 5px;
+}
+
+.title-note {
+    display: none;
+    border: 1px solid #dedede;
+    border-radius: 2px;
+    width: 100%;
+    padding: 2px 5px;
+}
+
+.ck-editor {
+    display: none;
+}
+
+.title-note:focus {
+    outline: none;
+    border: 1px solid #dedede;
+}
+
+.note-editor-block{
+    min-height: 50vh;
+    position: relative;
+}
+
+.notes {
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: 5px;
+    // border-top: 1px solid rgba(0, 0, 0, 0.125);
+    // border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.notes__item{
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 3px;
+}
+
+.notes__item:last-child {
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.notes__title {
+    overflow: hidden;
+}
+
+
+.sidebar__add-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.sidebar__close-btn {
+    display: none;
+} 
+
+.header__btn-group {
+    display: inline-flex;
+}
+
+.header__end-edit-btn {
+    display: none;
+}
+
+.header__save-btn {
+    display: none;
+    margin-left: 8px;
+}
+
+.header__delete-btn {
+    margin-left: 8px;
+}
+.header__menu-btn {
+    display: none;
+    margin-right: auto;
+}
+
+.flash-block.error {
+    width: 350px;
+    background-color: rgba($color: #dc3545, $alpha: 0.1);
+    border: 1px solid #dc3545;
+    border-radius: 3px;
+    padding: 10px 20px;
+    color: #dc3545;
+}
+
+.flash-block.success {
+    width: 350px;
+    background-color: rgba($color: #3bdc35, $alpha: 0.1);
+    border: 1px solid #35dc4b;
+    border-radius: 3px;
+    padding: 10px 20px;
+    color: #35dc35;
+}
+
+.js-notification {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.first-message {
+    display: flex;
+    padding-top: 50px;
+}
+
+.first-message__text {
+    display: inline-block;
+    font-size: 20px;
+}
+
+
+//---preloader---//
+.preloader {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.9);
+    z-index: 1000;
+}
+.preloader__message {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 40%;
+    border: 2px solid red;
+    padding: 20px;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    //transform: translate(-50%,-50%);
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #9370DB;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+.loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #BA55D3;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+.loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #FF00FF;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+//---end preloader---//
+
+
+@media screen and (max-width: 720px){
+    .wrapper {
+        width: 100%;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        max-height: 100vh;
+        overflow: scroll;
+        background-color: white;
+        z-index: 2;
+        padding: 20px 15px;
+    }
+
+    .sidebar__add-btn {
+       margin: 0;
+    }
+
+    .sidebar__btn-group {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        
+    }
+
+    .sidebar__close-btn {
+        display: none;
+        margin-right: 20px;
+    }
+
+    .maincontent {
+        width: 100%;
+    }
+
+    .header {
+        flex-direction: column;
+    }
+
+    .header__btn-group {
+        width: 100%;
+        order: -5;
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .header__end-edit-btn {
+        order: 1;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .header__menu-btn {
+        display: inline-block;
+    }
+
+    .title-note {
+        width: 100%;
+    }
+}

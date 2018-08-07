@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-4.0.0/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Notes</title>
+    <script src="https://cdn.ckeditor.com/ckeditor5/10.0.0/classic/ckeditor.js"></script>
+    <!-- <script src="js/ckeditor5-build-classic/ckeditor.js"></script> -->
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="container-fluid">
+            <aside class="sidebar">
+                <div class="sidebar__btn-group">
+                    <button type="button" id="close" class="btn btn-outline-primary sidebar__close-btn">x</button>
+                    <button type="button" id="add" class="btn btn btn-outline-primary sidebar__add-btn">Add note</button>
+                </div>
+                
+                <ul class="notes list-group"></ul>            
+            </aside>
+            
+            <div class="maincontent">
+                <div class="first-message">
+                        <div class="first-message__text">Select a note or add a new note</div>
+                </div>
+            
+                <form action="" class="note-editor-block visually-hidden">
+                    <header class="header">
+                        <div class="header__wrapper-titles">
+                            <input class="title-note" value="">
+                            <div class="header__text-title-note"></div>
+                        </div>
+                        <div class="header__btn-group">
+                            <button type="button" id="mobile-menu" class="btn btn-outline-primary header__menu-btn">Menu</button>
+                            <button type="button" id="edit" class="btn btn-outline-warning header__edit-btn">Edit</button>
+                            <button type="button" id="end-edit" class="btn btn-outline-success header__end-edit-btn">Finish edit and save</button>
+                            <button type="button" id="save" class="btn btn-outline-warning header__save-btn">Save</button>
+                            <button type="button" id="delete" class="btn btn-outline-danger header__delete-btn">Delete</button>
+                        </div>
+                    </header>
+                    <main class="main">
+                        <div class="note">
+                            <textarea class="note__editor" name="editor1" id="editor"></textarea>
+                            <div class="note__text"></div>
+                        </div>
+                    </main>
+                </form>
+            </div>
+                
+            <div class="js-notification"></div>
+        </div>
+    </div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!--<script src="css/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
+    <!-- <script type="text/javascript" src="js/crypto-js/crypto-js.js"></script> -->
+
+
+    <template id="flashTemplate">
+        <div class="flash-block js-flash-item">
+            <div class="flash-block__text js-flash-text"></div>
+        </div>
+    </template>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
